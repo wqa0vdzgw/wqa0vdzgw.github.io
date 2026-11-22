@@ -1,0 +1,1208 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>911在线爆料_视频爆料平台 - 真实一线影像与原创内容社区</title>
+<meta name="description" content="911在线爆料官方网站，专注真实社会影像与一线内容的视频品牌平台，汇聚爆料创作者、记录者与深度访谈，持续运营高品质原创内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131316'/%3E%3Cpath d='M20 18h14a14 14 0 0 1 0 28H20z' fill='%23ff3b30'/%3E%3Ccircle cx='34' cy='32' r='5' fill='%23131316'/%3E%3C/svg%3E">
+<style>
+:root{
+  --b911-ink:#131316;
+  --b911-ink-2:#1d1d22;
+  --b911-paper:#f4f3ef;
+  --b911-paper-2:#eae8e1;
+  --b911-line:#d8d5cc;
+  --b911-red:#e8382c;
+  --b911-red-deep:#b3241a;
+  --b911-gray:#6b6a66;
+  --b911-white:#ffffff;
+  --b911-radius:14px;
+  --b911-shadow:0 10px 30px rgba(19,19,22,.10);
+  --b911-pad:clamp(18px,4vw,56px);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--b911-paper);
+  color:var(--b911-ink);
+  font-family:"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  line-height:1.75;
+  font-size:16px;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;line-height:1.3;letter-spacing:.01em}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.b911-wrap{max-width:1180px;margin:0 auto;padding:0 var(--b911-pad)}
+
+/* ---------- 吸顶公告 + 页头 ---------- */
+.b911-sticky{position:sticky;top:0;z-index:80}
+.b911-notice{
+  background:var(--b911-ink);
+  color:#f1efe9;
+  font-size:13.5px;
+  padding:8px var(--b911-pad);
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  border-bottom:1px solid #2c2c33;
+}
+.b911-notice-tag{
+  background:var(--b911-red);color:#fff;font-size:11px;font-weight:700;
+  padding:2px 8px;border-radius:4px;letter-spacing:.12em;flex:none;
+}
+.b911-notice ul{display:flex;gap:22px;flex-wrap:wrap}
+.b911-notice li{opacity:.92}
+.b911-notice li b{color:#fff}
+.b911-header{
+  background:rgba(244,243,239,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--b911-line);
+}
+.b911-header-inner{
+  max-width:1180px;margin:0 auto;padding:12px var(--b911-pad);
+  display:flex;align-items:center;gap:22px;flex-wrap:wrap;
+}
+.b911-brand{display:flex;align-items:center;gap:10px;flex:none}
+.b911-brand-mark{
+  width:38px;height:38px;border-radius:10px;background:var(--b911-ink);
+  display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px;letter-spacing:.02em;
+  box-shadow:inset 0 0 0 2px var(--b911-red);
+}
+.b911-brand-name{font-weight:800;font-size:17px;letter-spacing:.02em}
+.b911-brand-sub{font-size:11px;color:var(--b911-gray);letter-spacing:.22em;text-transform:uppercase}
+.b911-nav{display:flex;gap:18px;flex-wrap:wrap;margin-left:auto;font-size:14.5px}
+.b911-nav a{padding:4px 0;border-bottom:2px solid transparent;transition:.18s}
+.b911-nav a:hover{border-color:var(--b911-red);color:var(--b911-red-deep)}
+.b911-search{
+  display:flex;align-items:center;gap:6px;
+  border:1px solid var(--b911-line);background:#fff;border-radius:999px;
+  padding:5px 6px 5px 14px;min-width:200px;
+}
+.b911-search input{
+  border:0;outline:0;background:transparent;font:inherit;font-size:14px;width:100%;min-width:0;
+}
+.b911-search button{
+  background:var(--b911-ink);color:#fff;border-radius:999px;padding:4px 12px;font-size:13px;flex:none;
+}
+.b911-search-msg{font-size:12.5px;color:var(--b911-red-deep);padding:0 0 0 4px;min-height:0}
+.b911-nav-toggle{
+  display:none;border:1px solid var(--b911-line);background:#fff;border-radius:8px;padding:6px 10px;font-size:14px;
+}
+@media(max-width:900px){
+  .b911-nav{display:none;width:100%;flex-direction:column;gap:2px;margin:6px 0 0;border-top:1px solid var(--b911-line);padding-top:8px}
+  .b911-nav.is-open{display:flex}
+  .b911-nav-toggle{display:inline-block;margin-left:auto}
+  .b911-search{width:100%;order:5}
+}
+
+/* ---------- 通用 ---------- */
+.b911-section{padding:clamp(38px,6vw,72px) 0;scroll-margin-top:126px}
+.b911-section-alt{background:var(--b911-paper-2)}
+.b911-eyebrow{
+  font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--b911-red-deep);font-weight:700;
+  display:flex;align-items:center;gap:10px;margin-bottom:12px;
+}
+.b911-eyebrow::before{content:"";width:26px;height:2px;background:var(--b911-red)}
+.b911-h2{font-size:clamp(23px,3.2vw,34px);font-weight:800}
+.b911-h2 em{font-style:normal;color:var(--b911-red-deep)}
+.b911-lead{color:var(--b911-gray);max-width:62ch;margin-top:10px;font-size:15.5px}
+.b911-head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+
+/* ---------- 首屏 4:6 ---------- */
+.b911-hero{padding:clamp(30px,5vw,64px) 0 clamp(34px,5vw,64px)}
+.b911-hero-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:clamp(22px,4vw,48px);align-items:center}
+@media(max-width:880px){.b911-hero-grid{grid-template-columns:1fr}}
+.b911-hero-badge{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;
+  background:#fff;border:1px solid var(--b911-line);border-radius:999px;padding:5px 14px;color:var(--b911-ink-2);
+}
+.b911-hero-badge i{width:7px;height:7px;border-radius:50%;background:var(--b911-red);display:block}
+.b911-h1{
+  font-size:clamp(38px,6.4vw,66px);font-weight:900;letter-spacing:-.015em;margin:16px 0 0;
+}
+.b911-h1 span{color:var(--b911-red-deep)}
+.b911-hero-tag{margin-top:14px;font-size:clamp(16px,2vw,19px);font-weight:700;color:var(--b911-ink-2)}
+.b911-hero-desc{margin-top:14px;color:#4a4944;font-size:15.5px}
+.b911-hero-desc b{color:var(--b911-ink)}
+.b911-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.b911-btn{
+  display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 22px;font-size:14.5px;font-weight:700;
+  transition:.18s;border:1px solid transparent;
+}
+.b911-btn-primary{background:var(--b911-red);color:#fff;box-shadow:0 8px 20px rgba(232,56,44,.28)}
+.b911-btn-primary:hover{background:var(--b911-red-deep);transform:translateY(-1px)}
+.b911-btn-ghost{background:#fff;border-color:var(--b911-line);color:var(--b911-ink)}
+.b911-btn-ghost:hover{border-color:var(--b911-ink)}
+.b911-hero-visual{position:relative}
+.b911-hero-visual img{border-radius:18px;box-shadow:var(--b911-shadow);width:100%;height:auto}
+.b911-hero-float{
+  position:absolute;left:16px;bottom:16px;right:16px;
+  background:rgba(19,19,22,.86);color:#fff;border-radius:12px;padding:12px 16px;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13.5px;backdrop-filter:blur(4px);
+}
+.b911-hero-float b{font-size:16px}
+.b911-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:26px}
+.b911-stat{background:#fff;border:1px solid var(--b911-line);border-radius:12px;padding:14px 16px}
+.b911-stat b{display:block;font-size:clamp(20px,2.6vw,26px);font-weight:900;letter-spacing:-.01em}
+.b911-stat span{font-size:12.5px;color:var(--b911-gray)}
+
+/* ---------- 精选内容（一大 + 列表） ---------- */
+.b911-focus-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(18px,3vw,32px)}
+@media(max-width:900px){.b911-focus-grid{grid-template-columns:1fr}}
+.b911-focus-main{
+  background:#fff;border:1px solid var(--b911-line);border-radius:var(--b911-radius);overflow:hidden;
+  box-shadow:var(--b911-shadow);
+}
+.b911-focus-main img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.b911-focus-body{padding:20px 22px 22px}
+.b911-chip{
+  display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.08em;
+  background:#fde9e7;color:var(--b911-red-deep);border-radius:5px;padding:2px 9px;margin-right:6px;
+}
+.b911-focus-body h3{font-size:clamp(20px,2.4vw,25px);margin:10px 0 8px}
+.b911-focus-body p{color:#514f4a;font-size:15px}
+.b911-meta{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--b911-gray);margin-top:12px;align-items:center}
+.b911-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.b911-act{
+  border:1px solid var(--b911-line);background:#fff;border-radius:999px;padding:5px 13px;font-size:13px;color:#3c3b37;
+  transition:.16s;
+}
+.b911-act:hover{border-color:var(--b911-ink);color:var(--b911-ink)}
+.b911-act.is-on{background:var(--b911-red);border-color:var(--b911-red);color:#fff}
+.b911-list{display:flex;flex-direction:column;gap:0}
+.b911-vitem{
+  background:#fff;border:1px solid var(--b911-line);border-radius:12px;padding:15px 17px;margin-bottom:12px;
+  transition:.18s;
+}
+.b911-vitem:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(19,19,22,.08)}
+.b911-vitem h3{font-size:16.5px;margin:6px 0 6px}
+.b911-vitem p{font-size:14px;color:#57554f}
+.b911-vitem .b911-meta{margin-top:8px}
+
+/* ---------- 视频内容（单列图文列表） ---------- */
+.b911-video-list{display:flex;flex-direction:column;gap:16px}
+.b911-vrow{
+  display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:18px;
+  background:#fff;border:1px solid var(--b911-line);border-radius:14px;padding:14px;transition:.18s;
+}
+.b911-vrow:hover{box-shadow:0 10px 26px rgba(19,19,22,.09)}
+.b911-vrow img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px}
+@media(max-width:760px){.b911-vrow{grid-template-columns:1fr}}
+.b911-vrow h3{font-size:17.5px;margin:6px 0 6px}
+.b911-vrow p{font-size:14px;color:#57554f}
+.b911-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.b911-tag{font-size:11.5px;color:var(--b911-gray);background:var(--b911-paper-2);border-radius:4px;padding:2px 8px}
+
+/* ---------- 专题 ---------- */
+.b911-topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px}
+.b911-topic{
+  background:#fff;border:1px solid var(--b911-line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;
+}
+.b911-topic .b911-status{font-size:12px;color:var(--b911-red-deep);font-weight:700}
+.b911-topic h3{font-size:18px}
+.b911-topic p{font-size:14px;color:#57554f}
+.b911-topic ul{margin-top:6px;display:flex;flex-direction:column;gap:6px}
+.b911-topic li{font-size:13.5px;color:#403f3a;padding-left:14px;position:relative}
+.b911-topic li::before{content:"›";position:absolute;left:0;color:var(--b911-red);font-weight:800}
+
+/* ---------- 关键词解析 ---------- */
+.b911-essay{max-width:860px}
+.b911-essay h3{font-size:19px;margin:26px 0 10px}
+.b911-essay p{color:#43423e;font-size:15.5px;margin-bottom:12px}
+.b911-essay .b911-quote{
+  border-left:3px solid var(--b911-red);background:#fff;padding:14px 18px;border-radius:0 10px 10px 0;
+  font-size:15px;color:var(--b911-ink-2);margin:16px 0;
+}
+
+/* ---------- 作者（双列简介） ---------- */
+.b911-authors{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px}
+.b911-author{
+  background:#fff;border:1px solid var(--b911-line);border-radius:14px;padding:18px;display:flex;gap:14px;align-items:flex-start;
+}
+.b911-avatar{
+  width:52px;height:52px;border-radius:14px;flex:none;display:grid;place-items:center;
+  font-weight:800;color:#fff;font-size:19px;letter-spacing:.02em;
+}
+.b911-author h3{font-size:16.5px}
+.b911-author .b911-role{font-size:12.5px;color:var(--b911-red-deep);font-weight:700;margin-top:2px}
+.b911-author p{font-size:13.5px;color:#57554f;margin-top:8px}
+.b911-author .b911-figures{display:flex;gap:14px;font-size:12.5px;color:var(--b911-gray);margin-top:8px}
+.b911-author .b911-figures b{color:var(--b911-ink)}
+
+/* ---------- 评价（双列） ---------- */
+.b911-reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.b911-review{
+  background:#fff;border:1px solid var(--b911-line);border-radius:12px;padding:16px 18px;
+}
+.b911-review .b911-who{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--b911-gray);margin-bottom:8px}
+.b911-review .b911-dot{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:11px;color:#fff;font-weight:700}
+.b911-review p{font-size:14.5px;color:#3f3e3a}
+.b911-review .b911-stars{color:var(--b911-red);font-size:13px;letter-spacing:2px;margin-top:8px}
+
+/* ---------- 榜单 / 动态 / FAQ / 合作 ---------- */
+.b911-rank{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:18px}
+.b911-rank-col{background:#fff;border:1px solid var(--b911-line);border-radius:14px;padding:18px}
+.b911-rank-col h3{font-size:16px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.b911-rank-col h3 span{font-size:11.5px;color:var(--b911-gray);font-weight:400}
+.b911-rank-col li{display:flex;gap:10px;font-size:14px;padding:7px 0;border-bottom:1px dashed var(--b911-line);color:#3f3e3a}
+.b911-rank-col li:last-child{border-bottom:0}
+.b911-rank-col li i{font-style:normal;font-weight:800;color:var(--b911-gray);width:18px;flex:none}
+.b911-rank-col li:nth-child(1) i{color:var(--b911-red)}
+.b911-rank-col li em{font-style:normal;margin-left:auto;font-size:12.5px;color:var(--b911-gray);flex:none}
+
+.b911-news{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
+.b911-news-item{background:#fff;border:1px solid var(--b911-line);border-radius:12px;padding:16px 18px}
+.b911-news-item time{font-size:12px;color:var(--b911-red-deep);font-weight:700}
+.b911-news-item h3{font-size:15.5px;margin:6px 0 6px}
+.b911-news-item p{font-size:13.5px;color:#57554f}
+
+.b911-faq{max-width:900px;display:flex;flex-direction:column;gap:10px}
+.b911-faq details{background:#fff;border:1px solid var(--b911-line);border-radius:10px;padding:12px 16px}
+.b911-faq summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none}
+.b911-faq summary::-webkit-details-marker{display:none}
+.b911-faq summary::before{content:"+";color:var(--b911-red);font-weight:800;margin-right:8px}
+.b911-faq details[open] summary::before{content:"−"}
+.b911-faq p{font-size:14px;color:#4c4b46;margin-top:8px}
+
+.b911-partners{display:flex;flex-wrap:wrap;gap:12px}
+.b911-partner{
+  border:1px solid var(--b911-line);background:#fff;border-radius:10px;padding:12px 20px;font-weight:700;font-size:14px;color:#4a4944;
+}
+
+/* ---------- 页脚 ---------- */
+.b911-footer{background:var(--b911-ink);color:#cfcdc6;padding:clamp(34px,5vw,58px) 0 26px;font-size:14px}
+.b911-footer-grid{display:grid;grid-template-columns:minmax(0,2fr) repeat(2,minmax(0,1fr));gap:26px}
+@media(max-width:760px){.b911-footer-grid{grid-template-columns:1fr}}
+.b911-footer h4{color:#fff;font-size:14px;letter-spacing:.06em;margin-bottom:10px}
+.b911-footer p{color:#9d9b94;font-size:13.5px;line-height:1.85}
+.b911-footer li{padding:4px 0;font-size:13.5px;color:#a9a7a0}
+.b911-footer li a:hover{color:#fff}
+.b911-footer-bottom{
+  border-top:1px solid #2c2c33;margin-top:26px;padding-top:16px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12.5px;color:#82807a;
+}
+.b911-brand-in-footer{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+
+/* ---------- 回到顶部 / Toast / 弹窗 ---------- */
+.b911-top{
+  position:fixed;right:18px;bottom:18px;z-index:90;
+  width:44px;height:44px;border-radius:50%;background:var(--b911-ink);color:#fff;font-size:18px;
+  display:grid;place-items:center;box-shadow:var(--b911-shadow);opacity:0;pointer-events:none;transition:.22s;
+}
+.b911-top.is-show{opacity:1;pointer-events:auto}
+.b911-toast{
+  position:fixed;left:50%;bottom:32px;transform:translate(-50%,16px);z-index:120;
+  background:var(--b911-ink);color:#fff;border-radius:999px;padding:9px 20px;font-size:13.5px;
+  opacity:0;pointer-events:none;transition:.24s;box-shadow:var(--b911-shadow);
+}
+.b911-toast.is-show{opacity:1;transform:translate(-50%,0)}
+.b911-modal{
+  position:fixed;inset:0;z-index:110;display:none;place-items:center;padding:20px;
+  background:rgba(19,19,22,.55);
+}
+.b911-modal.is-open{display:grid}
+.b911-modal-card{
+  background:#fff;border-radius:16px;max-width:440px;width:100%;padding:24px;box-shadow:var(--b911-shadow);
+  max-height:86vh;overflow:auto;
+}
+.b911-modal-card h3{font-size:19px;margin-bottom:8px}
+.b911-modal-card p{font-size:14px;color:#57554f;margin-bottom:14px}
+.b911-modal-card .b911-close{float:right;font-size:20px;line-height:1;color:var(--b911-gray)}
+.b911-field{display:block;font-size:13px;color:#57554f;margin-top:10px}
+.b911-field input,.b911-field textarea{
+  width:100%;margin-top:5px;border:1px solid var(--b911-line);border-radius:8px;padding:9px 11px;font:inherit;font-size:14px;
+  background:var(--b911-paper);outline:0;
+}
+.b911-field input:focus,.b911-field textarea:focus{border-color:var(--b911-red)}
+.b911-share-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.b911-share-row button{border:1px solid var(--b911-line);border-radius:999px;padding:7px 16px;font-size:13.5px;background:var(--b911-paper)}
+.b911-share-row button:hover{border-color:var(--b911-ink)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="b911-sticky">
+  <div class="b911-notice" role="status" aria-label="最新公告">
+    <span class="b911-notice-tag">最新</span>
+    <ul>
+      <li><b>「城市夜行档案」第二季</b>上线，首批 12 条一线影像已发布</li>
+      <li>爆料线索投稿通道开放中，<b>24 小时内</b>完成初审</li>
+      <li>11 月创作者激励榜公示，<b>报名</b>延至 11 月 30 日</li>
+    </ul>
+  </div>
+
+  <header class="b911-header">
+    <div class="b911-header-inner">
+      <a class="b911-brand" href="#top">
+        <span class="b911-brand-mark">911</span>
+        <span>
+          <span class="b911-brand-name">911在线爆料</span>
+          <span class="b911-brand-sub">Official Video Portal</span>
+        </span>
+      </a>
+      <button class="b911-nav-toggle" id="b911NavToggle" aria-expanded="false" aria-controls="b911Nav">菜单</button>
+      <nav class="b911-nav" id="b911Nav" aria-label="主导航">
+        <a href="#b911-focus">精选</a>
+        <a href="#b911-videos">视频</a>
+        <a href="#b911-topics">专题</a>
+        <a href="#b911-essay">解析</a>
+        <a href="#b911-authors">创作者</a>
+        <a href="#b911-reviews">口碑</a>
+        <a href="#b911-faq">FAQ</a>
+      </nav>
+      <form class="b911-search" id="b911SearchForm" role="search">
+        <input type="search" id="b911SearchInput" placeholder="搜索影像、创作者、专题" aria-label="站内搜索">
+        <button type="submit">搜索</button>
+      </form>
+    </div>
+    <div class="b911-header-inner" style="padding-top:0;padding-bottom:8px">
+      <p class="b911-search-msg" id="b911SearchMsg" aria-live="polite"></p>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="b911-hero b911-section" aria-labelledby="b911-h1-title">
+    <div class="b911-wrap">
+      <div class="b911-hero-grid">
+        <div>
+          <span class="b911-hero-badge"><i></i>品牌官方网站 · 官方发布</span>
+          <h1 class="b911-h1" id="b911-h1-title">911在线爆料</h1>
+          <p class="b911-hero-tag">真实一线影像的视频品牌平台</p>
+          <p class="b911-hero-desc">
+            作为国内专注真实记录的<b>视频品牌</b>，911在线爆料官方网站以一线影像、人物访谈与城市观察为核心内容，为<b>创作者</b>与机构搭建高品质内容生态。我们坚持原创、正版、高清的发布标准，以专业审核与持续运营，让每一条爆料都有出处、有后续、有温度。
+          </p>
+          <div class="b911-hero-actions">
+            <a class="b911-btn b911-btn-primary" href="#b911-videos">观看今日影像</a>
+            <a class="b911-btn b911-btn-ghost" href="#b911-authors">认识创作者</a>
+            <button class="b911-btn b911-btn-ghost" type="button" data-b911-open="submit">我要投稿爆料</button>
+          </div>
+          <div class="b911-stats">
+            <div class="b911-stat"><b data-b911-count="12860">12,860</b><span>条在架原创影像</span></div>
+            <div class="b911-stat"><b data-b911-count="642">642</b><span>位认证创作者</span></div>
+            <div class="b911-stat"><b>9.2</b><span>社区口碑评分（10 分制）</span></div>
+          </div>
+        </div>
+        <figure class="b911-hero-visual" style="margin:0">
+          <svg viewBox="0 0 800 560" role="img" aria-label="夜色城市高架桥与摄像机取景框构成的911在线爆料主视觉" style="width:100%;height:auto;border-radius:18px;box-shadow:0 10px 30px rgba(19,19,22,.18);display:block">
+            <defs>
+              <linearGradient id="b911Sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1b1e2a"/><stop offset=".55" stop-color="#2b2f42"/><stop offset="1" stop-color="#4a2b28"/>
+              </linearGradient>
+              <linearGradient id="b911Road" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#111319"/><stop offset="1" stop-color="#2a2e3a"/>
+              </linearGradient>
+              <linearGradient id="b911Glow" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ff5a3c" stop-opacity=".9"/><stop offset="1" stop-color="#ff5a3c" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <rect width="800" height="560" fill="url(#b911Sky)"/>
+            <g opacity=".55" fill="#8f95ae">
+              <rect x="40" y="230" width="60" height="230" rx="4"/>
+              <rect x="112" y="180" width="48" height="280" rx="4"/>
+              <rect x="172" y="260" width="70" height="200" rx="4"/>
+              <rect x="560" y="200" width="54" height="260" rx="4"/>
+              <rect x="626" y="250" width="76" height="210" rx="4"/>
+              <rect x="714" y="170" width="50" height="290" rx="4"/>
+            </g>
+            <g fill="#ffd7a8" opacity=".8">
+              <rect x="52" y="250" width="10" height="10"/><rect x="74" y="282" width="10" height="10"/>
+              <rect x="124" y="206" width="10" height="10"/><rect x="146" y="240" width="10" height="10"/>
+              <rect x="188" y="286" width="10" height="10"/><rect x="216" y="318" width="10" height="10"/>
+              <rect x="574" y="228" width="10" height="10"/><rect x="598" y="262" width="10" height="10"/>
+              <rect x="644" y="280" width="10" height="10"/><rect x="672" y="316" width="10" height="10"/>
+              <rect x="726" y="200" width="10" height="10"/><rect x="748" y="234" width="10" height="10"/>
+            </g>
+            <path d="M0 470 C160 430 260 500 420 470 C560 444 660 500 800 462 L800 560 L0 560 Z" fill="url(#b911Road)"/>
+            <path d="M0 508 C180 476 300 528 470 502 C620 480 700 520 800 500" stroke="#ff7a5c" stroke-width="3" fill="none" stroke-dasharray="18 14" opacity=".85"/>
+            <g transform="translate(278,150)">
+              <rect x="0" y="0" width="252" height="150" rx="10" fill="#0d0f14" stroke="#ff5a3c" stroke-width="3"/>
+              <path d="M0 24 L30 0 M252 24 L222 0 M0 126 L30 150 M252 126 L222 150" stroke="#ff5a3c" stroke-width="3"/>
+              <circle cx="126" cy="75" r="34" fill="none" stroke="#ff5a3c" stroke-width="3" opacity=".75"/>
+              <circle cx="126" cy="75" r="7" fill="#ff5a3c"/>
+              <text x="126" y="132" text-anchor="middle" font-size="13" fill="#ffb4a3" font-family="monospace" letter-spacing="3">REC · 911</text>
+            </g>
+            <rect x="0" y="440" width="800" height="120" fill="url(#b911Glow)" opacity=".22"/>
+          </svg>
+          <figcaption class="b911-hero-float">
+            <span>今晚 20:00 直播 · 一线记录者圆桌</span>
+            <b>6.8 万人预约</b>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 精选焦点 -->
+  <section class="b911-section b911-section-alt" id="b911-focus" aria-labelledby="b911-focus-title">
+    <div class="b911-wrap">
+      <div class="b911-head-row">
+        <div>
+          <p class="b911-eyebrow">Focus · 今日焦点</p>
+          <h2 class="b911-h2" id="b911-focus-title">焦点推荐 <em>值得细看的四条现场</em></h2>
+          <p class="b911-lead">编辑组每日从近千条投稿中筛选真实、可核验、有后续的影像，以精品内容回应社区期待。以下为本周重点呈现。</p>
+        </div>
+        <a class="b911-btn b911-btn-ghost" href="#b911-videos">查看全部视频</a>
+      </div>
+
+      <div class="b911-focus-grid">
+        <article class="b911-focus-main">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 540'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23223a4d'/%3E%3Cstop offset='1' stop-color='%23c0553a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='960' height='540' fill='url(%23g1)'/%3E%3Cg fill='%23e9eef2' opacity='.22'%3E%3Crect x='60' y='300' width='120' height='180'/%3E%3Crect x='200' y='250' width='90' height='230'/%3E%3Crect x='310' y='330' width='140' height='150'/%3E%3Crect x='660' y='270' width='110' height='210'/%3E%3Crect x='790' y='320' width='120' height='160'/%3E%3C/g%3E%3Cpath d='M0 470 L960 400 L960 540 L0 540 Z' fill='%23131c24' opacity='.7'/%3E%3Ccircle cx='760' cy='130' r='54' fill='%23ffb27a' opacity='.55'/%3E%3Cg transform='translate(360,150)'%3E%3Crect width='240' height='150' rx='12' fill='none' stroke='%23fff' stroke-width='4' opacity='.9'/%3E%3Ccircle cx='120' cy='75' r='26' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M108 63 L108 87 L130 75 Z' fill='%23fff'/%3E%3C/g%3E%3Ctext x='480' y='510' text-anchor='middle' font-size='22' fill='%23fff' font-family='sans-serif' opacity='.9'%3E高架桥下的三百个凌晨%3C/text%3E%3C/svg%3E" alt="凌晨高架桥下巡检记录者拍摄的夜色城市影像封面" width="960" height="540" loading="lazy">
+          <div class="b911-focus-body">
+            <span class="b911-chip">重点影像</span><span class="b911-chip">城市观察</span>
+            <h3>高架桥下的三百个凌晨：一位巡检记录者的三年影像</h3>
+            <p>从 2023 年起，记录者「老陈夜行」用固定机位拍下同一处高架桥下的深夜人流。本期成片整理出 300 个凌晨的片段，并附上当时的时间、天气与现场声音，构成一份可查证的民间观察档案。</p>
+            <div class="b911-meta">
+              <span>创作者：老陈夜行</span><span>时长 18:42</span><span>高清 4K</span>
+              <span data-b911-like-count>2.4 万点赞</span>
+            </div>
+            <div class="b911-actions">
+              <button class="b911-act" type="button" data-b911-like>♡ 点赞</button>
+              <button class="b911-act" type="button" data-b911-fav>☆ 收藏</button>
+              <button class="b911-act" type="button" data-b911-share>分享</button>
+              <button class="b911-act" type="button" data-b911-open="report">反馈</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="b911-list">
+          <article class="b911-vitem">
+            <span class="b911-chip">人物</span>
+            <h3>菜市场里的十年：摊主、称与秤砣的日常</h3>
+            <p>跟随清晨五点的批发车流，记录一位蔬菜摊主从卸货、摆摊到收摊的完整一天，片中保留全部现场声。</p>
+            <div class="b911-meta"><span>创作者：菜场观察员</span><span>时长 12:30</span><span>点赞 8,721</span></div>
+            <div class="b911-actions">
+              <button class="b911-act" type="button" data-b911-like>♡ 点赞</button>
+              <button class="b911-act" type="button" data-b911-fav>☆ 收藏</button>
+            </div>
+          </article>
+          <article class="b911-vitem">
+            <span class="b911-chip">深度</span>
+            <h3>一条老街的搬迁时间表：37 户人的各自选择</h3>
+            <p>持续跟拍 6 个月，记录搬迁公告发布后，居民、店铺与社区工作者之间的沟通与协商过程。</p>
+            <div class="b911-meta"><span>创作者：巷口档案</span><span>时长 24:05</span><span>点赞 1.1 万</span></div>
+            <div class="b911-actions">
+              <button class="b911-act" type="button" data-b911-like>♡ 点赞</button>
+              <button class="b911-act" type="button" data-b911-fav>☆ 收藏</button>
+            </div>
+          </article>
+          <article class="b911-vitem">
+            <span class="b911-chip">科普</span>
+            <h3>如何判断一段视频是否可信？五步核查法实操</h3>
+            <p>从原始文件时间戳、拍摄角度、天气比对到第三方信源，逐步演示内容核查的完整流程。</p>
+            <div class="b911-meta"><span>创作者：核查小组</span><span>时长 09:48</span><span>点赞 6,340</span></div>
+            <div class="b911-actions">
+              <button class="b911-act" type="button" data-b911-like>♡ 点赞</button>
+              <button class="b911-act" type="button" data-b911-fav>☆ 收藏</button>
+            </div>
+          </article>
+          <article class="b911-vitem">
+            <span class="b911-chip">情感</span>
+            <h3>母亲的第一支手机：一次迟到的家庭记录</h3>
+            <p>创作者用一个月教母亲使用拍摄功能，最终两人共同完成一段 3 分钟的家庭影像。</p>
+            <div class="b911-meta"><span>创作者：周末纪实</span><span>时长 07:16</span><span>点赞 9,088</span></div>
+            <div class="b911-actions">
+              <button class="b911-act" type="button" data-b911-like>♡ 点赞</button>
+              <button class="b911-act" type="button" data-b911-fav>☆ 收藏</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 视频内容 -->
+  <section class="b911-section" id="b911-videos" aria-labelledby="b911-videos-title">
+    <div class="b911-wrap">
+      <div class="b911-head-row">
+        <div>
+          <p class="b911-eyebrow">Videos · 影像编辑室</p>
+          <h2 class="b911-h2" id="b911-videos-title">本周视频 <em>按发布顺序</em></h2>
+          <p class="b911-lead">911在线爆料的每一支成片都标注拍摄时间、地点与核查结论，保持专业、可追溯的发布标准。</p>
+        </div>
+      </div>
+      <div class="b911-video-list">
+        <article class="b911-vrow">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23e8e2d6'/%3E%3Cg fill='%23c8bda6'%3E%3Crect x='40' y='180' width='120' height='140'/%3E%3Crect x='180' y='140' width='90' height='180'/%3E%3Crect x='420' y='160' width='110' height='160'/%3E%3C/g%3E%3Ccircle cx='330' cy='110' r='46' fill='%23b3492f' opacity='.8'/%3E%3Cpath d='M0 300 L640 260 L640 360 L0 360 Z' fill='%23a89b82'/%3E%3Cg stroke='%23fff' stroke-width='5' fill='none'%3E%3Crect x='250' y='90' width='160' height='96' rx='8'/%3E%3Cpath d='M250 114 L270 90 M410 114 L390 90'/%3E%3C/g%3E%3Ctext x='320' y='336' text-anchor='middle' font-size='16' fill='%23fff' font-family='sans-serif'%3E批发市场清晨五点%3C/text%3E%3C/svg%3E" alt="批发市场清晨五点的卸货人流与摊位影像封面" width="640" height="360" loading="lazy">
+          <div>
+            <span class="b911-chip">日常记录</span>
+            <h3>清晨五点的批发市场：从卸货到开秤的两小时</h3>
+            <p>拍摄组连续三天蹲守同一个档口，完整记录蔬菜从货车进场、分拣到开秤的全过程，并收录摊主对进货节奏的口述。</p>
+            <div class="b911-tags"><span class="b911-tag">凌晨拍摄</span><span class="b911-tag">现场声</span><span class="b911-tag">民生</span></div>
+            <div class="b911-meta"><span>创作者：菜场观察员</span><span>播放 21.6 万</span><span>点赞 8,721</span><span>收藏 3,104</span></div>
+            <div class="b911-actions">
+              <button class="b911-act" type="button" data-b911-like>♡ 点赞</button>
+              <button class="b911-act" type="button" data-b911-fav>☆ 收藏</button>
+              <button class="b911-act" type="button" data-b911-comment>评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="b911-vrow">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23172633'/%3E%3Cstop offset='1' stop-color='%233d5a6c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23g2)'/%3E%3Cg stroke='%237fd1c9' stroke-width='2' fill='none' opacity='.7'%3E%3Cpath d='M40 300 L160 210 L260 260 L360 150 L470 220 L600 120'/%3E%3C/g%3E%3Cg fill='%23ffd6a5'%3E%3Ccircle cx='160' cy='210' r='7'/%3E%3Ccircle cx='260' cy='260' r='7'/%3E%3Ccircle cx='360' cy='150' r='7'/%3E%3Ccircle cx='470' cy='220' r='7'/%3E%3C/g%3E%3Crect x='70' y='60' width='180' height='90' rx='8' fill='%23ffffff' opacity='.12'/%3E%3Ctext x='160' y='112' text-anchor='middle' font-size='15' fill='%23eaf6f4' font-family='monospace'%3ECHECK LIST%3C/text%3E%3Ctext x='320' y='336' text-anchor='middle' font-size='16' fill='%23eaf6f4' font-family='sans-serif'%3E五步核查法%3C/text%3E%3C/svg%3E" alt="视频核查流程折线与核查清单示意图封面" width="640" height="360" loading="lazy">
+          <div>
+            <span class="b911-chip">知识科普</span>
+            <h3>五步核查法：一条视频如何从投稿到公开发布</h3>
+            <p>展示平台的内部核查流程，包括原始素材校验、时间地点交叉比对、当事人回访与法律风险评估。</p>
+            <div class="b911-tags"><span class="b911-tag">内容核查</span><span class="b911-tag">教程干货</span><span class="b911-tag">专业流程</span></div>
+            <div class="b911-meta"><span>创作者：核查小组</span><span>播放 14.2 万</span><span>点赞 6,340</span><span>收藏 5,220</span></div>
+            <div class="b911-actions">
+              <button class="b911-act" type="button" data-b911-like>♡ 点赞</button>
+              <button class="b911-act" type="button" data-b911-fav>☆ 收藏</button>
+              <button class="b911-act" type="button" data-b911-comment>评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="b911-vrow">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23f0e6e0'/%3E%3Cg fill='%23d6b8a3'%3E%3Crect x='0' y='250' width='640' height='110'/%3E%3C/g%3E%3Cg fill='%23935c40'%3E%3Crect x='70' y='150' width='90' height='120' rx='6'/%3E%3Crect x='190' y='130' width='70' height='140' rx='6'/%3E%3Crect x='290' y='170' width='100' height='100' rx='6'/%3E%3C/g%3E%3Ccircle cx='480' cy='120' r='52' fill='%23e07a4f' opacity='.85'/%3E%3Cg stroke='%237d4a30' stroke-width='4' fill='none'%3E%3Cpath d='M420 210 L540 210 M480 160 L480 260'/%3E%3C/g%3E%3Ctext x='320' y='336' text-anchor='middle' font-size='16' fill='%235c3a28' font-family='sans-serif'%3E搬迁协商现场%3C/text%3E%3C/svg%3E" alt="老街搬迁协商现场中的居民与社区工作者影像封面" width="640" height="360" loading="lazy">
+          <div>
+            <span class="b911-chip">深度测评</span>
+            <h3>搬迁公告之后：37 户居民的选择与协商记录</h3>
+            <p>本片按时间线呈现公告发布、意见征集、方案调整三个阶段的会议与采访，保留关键对话原声。</p>
+            <div class="b911-tags"><span class="b911-tag">城市探索</span><span class="b911-tag">社区治理</span><span class="b911-tag">长线跟拍</span></div>
+            <div class="b911-meta"><span>创作者：巷口档案</span><span>播放 32.8 万</span><span>点赞 1.1 万</span><span>收藏 7,430</span></div>
+            <div class="b911-actions">
+              <button class="b911-act" type="button" data-b911-like>♡ 点赞</button>
+              <button class="b911-act" type="button" data-b911-fav>☆ 收藏</button>
+              <button class="b911-act" type="button" data-b911-comment>评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="b911-vrow">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='g3' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23f6d7c3'/%3E%3Cstop offset='1' stop-color='%23c9776a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23g3)'/%3E%3Ccircle cx='210' cy='150' r='62' fill='%23fff1e4' opacity='.75'/%3E%3Ccircle cx='400' cy='170' r='52' fill='%23fff1e4' opacity='.55'/%3E%3Cg stroke='%236b3a30' stroke-width='6' fill='none' stroke-linecap='round'%3E%3Cpath d='M300 250 q20 -40 40 0'/%3E%3C/g%3E%3Crect x='470' y='180' width='90' height='140' rx='12' fill='%23fff1e4' opacity='.7'/%3E%3Ctext x='320' y='336' text-anchor='middle' font-size='16' fill='%235a2a22' font-family='sans-serif'%3E母亲的第一支手机%3C/text%3E%3C/svg%3E" alt="母女共同使用手机拍摄家庭影像的温暖场景封面" width="640" height="360" loading="lazy">
+          <div>
+            <span class="b911-chip">情感故事</span>
+            <h3>母亲的第一支手机：一次迟到的家庭记录</h3>
+            <p>创作者用一个月教母亲拍摄，从对焦到剪辑逐步练习，最终由母子二人共同完成三分钟家庭短片。</p>
+            <div class="b911-tags"><span class="b911-tag">家庭记录</span><span class="b911-tag">治愈影像</span><span class="b911-tag">陪伴</span></div>
+            <div class="b911-meta"><span>创作者：周末纪实</span><span>播放 46.5 万</span><span>点赞 9,088</span><span>收藏 6,201</span></div>
+            <div class="b911-actions">
+              <button class="b911-act" type="button" data-b911-like>♡ 点赞</button>
+              <button class="b911-act" type="button" data-b911-fav>☆ 收藏</button>
+              <button class="b911-act" type="button" data-b911-comment>评论</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="b911-vrow">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23dfe7dd'/%3E%3Cg fill='%236f8f6a'%3E%3Ccircle cx='120' cy='270' r='70'/%3E%3Ccircle cx='200' cy='300' r='50'/%3E%3Ccircle cx='520' cy='290' r='60'/%3E%3C/g%3E%3Cg fill='%23e9f0e6'%3E%3Crect x='260' y='140' width='120' height='160' rx='8'/%3E%3C/g%3E%3Cpath d='M280 180 h80 M280 210 h80 M280 240 h56' stroke='%236f8f6a' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='470' cy='120' r='40' fill='%23f0c46a'/%3E%3Ctext x='320' y='336' text-anchor='middle' font-size='16' fill='%23384a35' font-family='sans-serif'%3E社区影像工作坊%3C/text%3E%3C/svg%3E" alt="社区影像工作坊中记录板与绿植场景封面" width="640" height="360" loading="lazy">
+          <div>
+            <span class="b911-chip">创作幕后</span>
+            <h3>社区影像工作坊：用一台旧手机拍完的十二个故事</h3>
+            <p>工作坊把拍摄门槛降到一部手机，十二位居民独立完成选题、拍摄与剪辑，题材从早餐摊到夜班保安。</p>
+            <div class="b911-tags"><span class="b911-tag">社区</span><span class="b911-tag">手机拍摄</span><span class="b911-tag">创作者成长</span></div>
+            <div class="b911-meta"><span>创作者：911学院</span><span>播放 9.7 万</span><span>点赞 4,318</span><span>收藏 4,860</span></div>
+            <div class="b911-actions">
+              <button class="b911-act" type="button" data-b911-like>♡ 点赞</button>
+              <button class="b911-act" type="button" data-b911-fav>☆ 收藏</button>
+              <button class="b911-act" type="button" data-b911-comment>评论</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题 -->
+  <section class="b911-section b911-section-alt" id="b911-topics" aria-labelledby="b911-topics-title">
+    <div class="b911-wrap">
+      <div class="b911-head-row">
+        <div>
+          <p class="b911-eyebrow">Series · 专题企划</p>
+          <h2 class="b911-h2" id="b911-topics-title">长期企划 <em>让记录有后续</em></h2>
+          <p class="b911-lead">我们以专题方式组织长线内容，持续运营、逐条更新，让 911在线爆料的品牌影响力沉淀在具体的人和事上。</p>
+        </div>
+      </div>
+      <div class="b911-topics">
+        <article class="b911-topic">
+          <span class="b911-status">更新中 · 已上线 12 / 20 集</span>
+          <h3>城市夜行档案</h3>
+          <p>记录夜间工作者与城市空间的关系，从环卫、夜班司机到夜市摊主，形成一份完整的夜间观察样本。</p>
+          <ul>
+            <li>第 11 集：凌晨三点的公交总站</li>
+            <li>第 12 集：夜市收摊前最后一小时</li>
+            <li>第 13 集：夜班护工的交接本（待发布）</li>
+          </ul>
+        </article>
+        <article class="b911-topic">
+          <span class="b911-status">更新中 · 已上线 8 / 15 集</span>
+          <h3>一条街的十五年</h3>
+          <p>以固定机位与居民口述双线并进，追踪同一街区十五年间的店铺更替、人群变化与生活记忆。</p>
+          <ul>
+            <li>第 6 集：修鞋铺的第二代接班</li>
+            <li>第 7 集：街角书店的最后一次搬迁</li>
+            <li>第 8 集：老邻居的微信群（已上线）</li>
+          </ul>
+        </article>
+        <article class="b911-topic">
+          <span class="b911-status">更新中 · 已上线 5 / 10 集</span>
+          <h3>核查是怎样完成的</h3>
+          <p>把内容核查的过程公开给用户，用实际案例拆解信源判断、时间线还原与法律边界。</p>
+          <ul>
+            <li>第 3 集：一段网传视频的七天溯源</li>
+            <li>第 4 集：现场目击者回访方法</li>
+            <li>第 5 集：哪些内容不应公开（已上线）</li>
+          </ul>
+        </article>
+        <article class="b911-topic">
+          <span class="b911-status">策划中 · 12 月开启报名</span>
+          <h3>新锐记录者挑战赛</h3>
+          <p>面向首次投稿的创作者，提供选题辅导、拍摄设备借用与上线推荐位，鼓励真实、朴素的影像表达。</p>
+          <ul>
+            <li>赛制公开：单人 / 小组双赛道</li>
+            <li>奖励：创作基金与年度展映名额</li>
+            <li>上传入口将于 12 月 1 日开放</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关键词解析 / 品牌故事 -->
+  <section class="b911-section" id="b911-essay" aria-labelledby="b911-essay-title">
+    <div class="b911-wrap">
+      <div class="b911-head-row">
+        <div>
+          <p class="b911-eyebrow">Deep Dive · 关键词解析</p>
+          <h2 class="b911-h2" id="b911-essay-title">读懂 <em>911在线爆料</em>：一个视频品牌为何坚持“先核查、再发布”</h2>
+          <p class="b911-lead">以下内容由编辑部撰写，说明品牌定位、内容边界与运营方法，帮助用户与创作者理解我们的工作方式。</p>
+        </div>
+      </div>
+      <div class="b911-essay">
+        <h3>一、品牌定位：从爆料出发，做真实影像的官方网站</h3>
+        <p>911在线爆料并不是一个追逐热度的短视频搬运站，而是一个以真实记录为核心的视频品牌官方网站。我们把“爆料”理解为普通人在现场留下的第一手材料：一段手机录像、一份时间记录、一次当事人的口述，都可能成为重要影像的起点。平台的职责不是放大情绪，而是把这些材料整理成可核查、可追溯、可回看的精品内容。</p>
+        <p>在实际运营中，每条投稿会先进入线索池，由编辑与核查小组分别处理。编辑判断选题是否具备公共价值与叙事空间，核查小组则核对拍摄时间、地理位置、信源身份与二次传播路径。只有两项都通过的素材，才会进入正式制作。这样的流程让平台保持了相对克制的更新节奏，也正因如此，911在线爆料的社区口碑建立得比较慢，却更扎实。很多长期用户说，他们来这里不是为了“看热闹”，而是为了知道一件事后来怎么样了。</p>
+        <p>品牌也把同样的标准用在创作者身上。我们不做“流量扶持”式的短期承诺，而是通过选题辅导、拍摄规范、法务咨询与上线推荐位，帮助创作者完成从随手记录到完整作品的成长。这种陪伴式的内容生态，是平台持续运营的底气。</p>
+        <h3>二、内容方向：三类影像构成品牌主干</h3>
+        <p>第一类是现场记录。它强调时间、地点与人物行为的完整性，拍摄者往往就是当事人或现场附近的人。平台会尽量保留原始素材中的环境声与未经剪辑的镜头，让观众自己判断。第二类是人物的长期跟拍，例如在同一个摊位、同一家店铺或同一条街道持续拍摄数月至数年，形成可对照的时间线。第三类是知识科普与幕后内容，包括核查方法、拍摄技巧、法律边界、隐私保护等，目的是让更多投稿者知道怎样拍、怎样保护自己与当事人。</p>
+        <p>这三类内容相互支撑：现场记录提供事实基础，长期跟拍提供纵深，科普内容提供方法。三者共同构成 911在线爆料的垂直领域壁垒。我们不追求覆盖所有题材，而是围绕“真实、可核查、有后续”这三个关键词，把有限的人力投入到值得长期经营的内容上。选题会上，编辑最常问的两个问题是：这件事有当事人愿意说话吗？半年后我们还愿意回访吗？如果答案是否定的，再热闹的素材也会被放弃。</p>
+        <p>在表达层面，我们鼓励克制。画面不追求炫技，配乐尽量少用，字幕以事实陈述为主，避免渲染性词汇。很多作品的气质朴素，却因为细节真实而具备力量。这也是品牌反复强调的“真实是最好的品质”。</p>
+        <h3>三、社区机制：让创作者被看见，让用户有参与感</h3>
+        <p>社区是视频平台最难经营的部分。911在线爆料设置了三个基础机制。其一是投稿反馈：所有通过初审的线索都会收到书面回复，说明是否采用、需要补充什么材料，即使最终未上线也会给出原因。其二是公开的核查说明：重点作品上线时附一份简短说明，列出信源数量、回访次数与风险提示，用户可以在评论区提问，编辑部会集中答复。其三是创作者名录：每位通过认证的创作者拥有固定主页，展示擅长领域、作品数量与粉丝数据，用户可以直接关注。</p>
+        <p>此外，平台定期举办线上分享与线下放映，邀请创作者讲述拍摄过程，也邀请观众提问。这些活动不追求规模，而是强调交流质量。过去一年，我们完成了 14 场线上分享与 5 场小型放映，参与者从几十人到几百人不等，但大多数是真正关心内容的人。社区活力不是靠活动数量堆出来的，而是靠一次次具体的对话积累起来的。</p>
+        <p>对用户，我们也尽量保持透明。榜单不是纯按播放量排序，而是综合完播、收藏与反馈质量；推荐位会标注推荐理由；涉及未成年人与隐私的内容会有明确提示。我们相信，用户至上不是一句口号，而是体现在每一个信息呈现的细节里。品牌愿意把方法、流程与局限都公开出来，接受社区监督，这也是内容生态能够长期健康运转的前提。</p>
+        <h3>四、未来计划：把方法交给更多人</h3>
+        <p>接下来一年，911在线爆料会把更多资源投入到工具与方法层面：开放投稿指引手册、提供基础核查课程、上线创作者协作计划，并尝试与高校、社区机构共建影像工作坊。我们希望“爆料”不再是猎奇，而是一种负责任的社会记录方式。品牌故事写到今天，最重要的不是积累了多少播放量，而是有多少人愿意在拍摄前多想一步：我的镜头会不会伤害到别人，我记录的东西是否经得起复核。</p>
+        <div class="b911-quote">“先核查、再发布”，是我们对每一条影像最基本的承诺，也是这个视频品牌愿意长期坚持的底线。</div>
+        <p>作为一个仍在成长中的视频品牌，我们清楚自身能力有限，也接受公开的批评。官方网站会持续发布企业动态、更新日志与年度报告，让运营过程可见。对 911在线爆料来说，值得信赖不是宣传语，而是由一次次准确发布慢慢累积出来的结果。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者 -->
+  <section class="b911-section b911-section-alt" id="b911-authors" aria-labelledby="b911-authors-title">
+    <div class="b911-wrap">
+      <div class="b911-head-row">
+        <div>
+          <p class="b911-eyebrow">Creators · 认证创作者</p>
+          <h2 class="b911-h2" id="b911-authors-title">平台作者 <em>记录者名录</em></h2>
+          <p class="b911-lead">以下创作者均已完成身份与作品核验，长期在 911在线爆料发布原创、高清内容。</p>
+        </div>
+      </div>
+      <div class="b911-authors">
+        <article class="b911-author">
+          <div class="b911-avatar" style="background:#2b3a4a" aria-hidden="true">陈</div>
+          <div>
+            <h3>老陈夜行</h3>
+            <p class="b911-role">城市夜间观察 · 认证创作者</p>
+            <p>连续三年记录城市夜间工作者，习惯使用固定机位与现场声，作品以时间长、信息密度高著称。坚持拍摄前与当事人沟通授权。</p>
+            <div class="b911-figures"><span>作品 <b>86</b></span><span>粉丝 <b>12.4 万</b></span></div>
+            <button class="b911-act" type="button" data-b911-open="author" data-b911-name="老陈夜行" style="margin-top:10px">作者信息</button>
+          </div>
+        </article>
+        <article class="b911-author">
+          <div class="b911-avatar" style="background:#7a4a2c" aria-hidden="true">菜</div>
+          <div>
+            <h3>菜场观察员</h3>
+            <p class="b911-role">民生记录 · 认证创作者</p>
+            <p>专注菜市场与人情往来题材，擅长在嘈杂环境中捕捉细节对话。主张“少解说、多呈现”，作品多次被用于社区议题讨论。</p>
+            <div class="b911-figures"><span>作品 <b>54</b></span><span>粉丝 <b>8.7 万</b></span></div>
+            <button class="b911-act" type="button" data-b911-open="author" data-b911-name="菜场观察员" style="margin-top:10px">作者信息</button>
+          </div>
+        </article>
+        <article class="b911-author">
+          <div class="b911-avatar" style="background:#3f5a44" aria-hidden="true">巷</div>
+          <div>
+            <h3>巷口档案</h3>
+            <p class="b911-role">长线跟拍 · 认证创作者</p>
+            <p>与团队一起完成“一条街的十五年”系列，擅长建立长期信任关系。拍摄风格平实，注重保留协商与沟通过程中的完整语境。</p>
+            <div class="b911-figures"><span>作品 <b>42</b></span><span>粉丝 <b>15.1 万</b></span></div>
+            <button class="b911-act" type="button" data-b911-open="author" data-b911-name="巷口档案" style="margin-top:10px">作者信息</button>
+          </div>
+        </article>
+        <article class="b911-author">
+          <div class="b911-avatar" style="background:#324a5e" aria-hidden="true">核</div>
+          <div>
+            <h3>核查小组</h3>
+            <p class="b911-role">内容核查 · 官方团队</p>
+            <p>由编辑部与外部顾问组成的核查团队，负责信源验证与风险提示，定期发布方法论内容，是平台专业标准的重要支撑。</p>
+            <div class="b911-figures"><span>作品 <b>37</b></span><span>粉丝 <b>6.2 万</b></span></div>
+            <button class="b911-act" type="button" data-b911-open="author" data-b911-name="核查小组" style="margin-top:10px">作者信息</button>
+          </div>
+        </article>
+        <article class="b911-author">
+          <div class="b911-avatar" style="background:#8a4a52" aria-hidden="true">周</div>
+          <div>
+            <h3>周末纪实</h3>
+            <p class="b911-role">家庭影像 · 认证创作者</p>
+            <p>以家庭与代际关系为主题，作品温暖克制。擅长用简单设备完成叙事，鼓励普通人拿起手机记录身边的日常。</p>
+            <div class="b911-figures"><span>作品 <b>29</b></span><span>粉丝 <b>10.9 万</b></span></div>
+            <button class="b911-act" type="button" data-b911-open="author" data-b911-name="周末纪实" style="margin-top:10px">作者信息</button>
+          </div>
+        </article>
+        <article class="b911-author">
+          <div class="b911-avatar" style="background:#4c4a6b" aria-hidden="true">院</div>
+          <div>
+            <h3>911学院</h3>
+            <p class="b911-role">创作教学 · 官方栏目</p>
+            <p>面向新创作者的教学栏目，提供拍摄、剪辑与投稿流程指导，配套工作坊与练习任务，帮助更多人完成第一支作品。</p>
+            <div class="b911-figures"><span>作品 <b>63</b></span><span>粉丝 <b>5.4 万</b></span></div>
+            <button class="b911-act" type="button" data-b911-open="author" data-b911-name="911学院" style="margin-top:10px">作者信息</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 口碑 + 榜单 -->
+  <section class="b911-section" id="b911-reviews" aria-labelledby="b911-reviews-title">
+    <div class="b911-wrap">
+      <div class="b911-head-row">
+        <div>
+          <p class="b911-eyebrow">Voice · 社区口碑</p>
+          <h2 class="b911-h2" id="b911-reviews-title">用户评价 <em>与本周榜单</em></h2>
+          <p class="b911-lead">来自真实用户与创作者的反馈，语气与关注点各不相同。我们保留原始表述，仅做必要排版整理。</p>
+        </div>
+      </div>
+
+      <div class="b911-reviews">
+        <article class="b911-review">
+          <div class="b911-who"><span class="b911-dot" style="background:#e8382c">林</span>林间风 · 观看 2 年</div>
+          <p>最打动我的是每条视频下面那份核查说明。以前刷到类似内容总怕被带节奏，这里至少能知道时间、地点和回访次数。</p>
+          <div class="b911-stars">★★★★★</div>
+        </article>
+        <article class="b911-review">
+          <div class="b911-who"><span class="b911-dot" style="background:#3f5a44">吴</span>吴师傅 · 社区工作者</div>
+          <p>我们街道把《搬迁公告之后》放给居民看，讨论会顺畅很多。片子没有站队，就是把各方说的话都放进去，这点很难得。</p>
+          <div class="b911-stars">★★★★★</div>
+        </article>
+        <article class="b911-review">
+          <div class="b911-who"><span class="b911-dot" style="background:#2b3a4a">小</span>小舟 · 新创作者</div>
+          <p>投稿后第二天就收到回复，告诉我素材缺时间信息，还给了补拍建议。虽然第一次没上线，但我照着改完，第二次就过了。</p>
+          <div class="b911-stars">★★★★☆</div>
+        </article>
+        <article class="b911-review">
+          <div class="b911-who"><span class="b911-dot" style="background:#7a4a2c">阿</span>阿陶 · 老用户</div>
+          <p>更新确实不算快，但质量稳定。我更愿意把这里当成一个可以慢慢看完的影像库，而不是刷完就忘的信息流。</p>
+          <div class="b911-stars">★★★★☆</div>
+        </article>
+        <article class="b911-review">
+          <div class="b911-who"><span class="b911-dot" style="background:#4c4a6b">苏</span>苏禾 · 学生</div>
+          <p>学院的手机拍摄课很实用，前面几节讲取景和收音，后面直接给作业。我按课程拍了一段食堂纪录片，居然上线了。</p>
+          <div class="b911-stars">★★★★★</div>
+        </article>
+        <article class="b911-review">
+          <div class="b911-who"><span class="b911-dot" style="background:#324a5e">老</span>老岳 · 摄影爱好者</div>
+          <p>画质和声音处理很专业，尤其现场声保留得完整。希望以后能出一些关于音频后期的内容，我愿意付费学习。</p>
+          <div class="b911-stars">★★★★☆</div>
+        </article>
+      </div>
+
+      <div style="margin-top:30px">
+        <h3 style="font-size:19px;margin-bottom:14px">本周三张榜单</h3>
+        <div class="b911-rank">
+          <div class="b911-rank-col">
+            <h3>热度榜 <span>按完播与互动综合</span></h3>
+            <ol>
+              <li><i>1</i>母亲的第一支手机<em>46.5 万</em></li>
+              <li><i>2</i>搬迁公告之后<em>32.8 万</em></li>
+              <li><i>3</i>清晨五点的批发市场<em>21.6 万</em></li>
+              <li><i>4</i>五步核查法<em>14.2 万</em></li>
+              <li><i>5</i>社区影像工作坊<em>9.7 万</em></li>
+            </ol>
+          </div>
+          <div class="b911-rank-col">
+            <h3>新人榜 <span>近 30 天首次发布</span></h3>
+            <ol>
+              <li><i>1</i>小舟（食堂纪录片）<em>新晋</em></li>
+              <li><i>2</i>北门旧货铺<em>新晋</em></li>
+              <li><i>3</i>阿禾的夜跑日志<em>新晋</em></li>
+              <li><i>4</i>街角理发师<em>新晋</em></li>
+              <li><i>5</i>雨天便利店<em>新晋</em></li>
+            </ol>
+          </div>
+          <div class="b911-rank-col">
+            <h3>口碑榜 <span>用户反馈质量</span></h3>
+            <ol>
+              <li><i>1</i>巷口档案<em>9.6</em></li>
+              <li><i>2</i>核查小组<em>9.5</em></li>
+              <li><i>3</i>老陈夜行<em>9.4</em></li>
+              <li><i>4</i>周末纪实<em>9.3</em></li>
+              <li><i>5</i>菜场观察员<em>9.1</em></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 / 合作 / 投稿 -->
+  <section class="b911-section b911-section-alt" id="b911-news" aria-labelledby="b911-news-title">
+    <div class="b911-wrap">
+      <div class="b911-head-row">
+        <div>
+          <p class="b911-eyebrow">Updates · 企业动态</p>
+          <h2 class="b911-h2" id="b911-news-title">官方发布 <em>与合作伙伴</em></h2>
+          <p class="b911-lead">品牌动态、内容更新与共创计划同步在此发布，保持运营过程公开透明。</p>
+        </div>
+      </div>
+
+      <div class="b911-news">
+        <article class="b911-news-item">
+          <time datetime="2026-11-18">2026-11-18</time>
+          <h3>核查流程说明页正式上线</h3>
+          <p>新增图文版《内容核查流程说明》，涵盖信源分级、回访规范与风险提示模板，所有用户可免费查看。</p>
+        </article>
+        <article class="b911-news-item">
+          <time datetime="2026-11-11">2026-11-11</time>
+          <h3>年度创作者激励榜公示</h3>
+          <p>依据作品质量、社区反馈与合作完成度综合评定，共 24 位创作者入选，奖金与展映名额将于 12 月发放。</p>
+        </article>
+        <article class="b911-news-item">
+          <time datetime="2026-11-05">2026-11-05</time>
+          <h3>与三地社区机构达成共建</h3>
+          <p>联合开展影像记录培训与社区放映，首批工作坊计划在 12 月启动，面向居民免费开放报名。</p>
+        </article>
+        <article class="b911-news-item">
+          <time datetime="2026-10-29">2026-10-29</time>
+          <h3>移动端观看体验优化</h3>
+          <p>视频页加载策略升级，弱网环境下优先加载音频与文字摘要，减少等待时间，提升高清内容可访问性。</p>
+        </article>
+      </div>
+
+      <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px">
+        <div class="b911-topic">
+          <h3>合作品牌与伙伴</h3>
+          <p style="font-size:14px;color:#57554f">我们与关注社会记录、社区文化的机构长期合作，共同推动真实影像的公共价值。</p>
+          <div class="b911-partners" style="margin-top:6px">
+            <span class="b911-partner">城南社区中心</span>
+            <span class="b911-partner">青禾影像基金</span>
+            <span class="b911-partner">城市观察工作室</span>
+            <span class="b911-partner">附近书店联盟</span>
+          </div>
+        </div>
+        <div class="b911-topic">
+          <h3>投稿与线索</h3>
+          <p style="font-size:14px;color:#57554f">有现场素材、长期纪录计划或采访线索，欢迎提交。请提前阅读隐私保护与肖像权提示，确保素材来源合法。</p>
+          <div class="b911-actions">
+            <button class="b911-btn b911-btn-primary" type="button" data-b911-open="submit">上传素材 / 报名工作坊</button>
+            <button class="b911-btn b911-btn-ghost" type="button" data-b911-open="contact">联系我们</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="b911-section" id="b911-faq" aria-labelledby="b911-faq-title">
+    <div class="b911-wrap">
+      <div class="b911-head-row">
+        <div>
+          <p class="b911-eyebrow">Help · 常见问题</p>
+          <h2 class="b911-h2" id="b911-faq-title">关于 <em>911在线爆料</em> 的疑问</h2>
+          <p class="b911-lead">投稿、授权与内容规则的常见问题，点击展开查看。</p>
+        </div>
+      </div>
+      <div class="b911-faq">
+        <details>
+          <summary>投稿后会多久收到回复？</summary>
+          <p>通过初审的线索通常在 24 小时内收到书面回复，复杂线索可能需要 3 个工作日。未通过初审的素材也会说明主要原因，例如缺少时间地点信息或涉及他人隐私。</p>
+        </details>
+        <details>
+          <summary>如何确认我的素材会被合规使用？</summary>
+          <p>上线前编辑会与投稿人确认使用范围、署名方式与修改意见，涉及当事人出镜的内容需取得明确授权。所有授权记录会归档保存。</p>
+        </details>
+        <details>
+          <summary>平台对画质有硬性要求吗？</summary>
+          <p>没有强制设备门槛。手机拍摄同样可以上线，但我们建议保证画面稳定、声音清晰，并提供原始文件而非多次转发的压缩版本，以便核对信息。</p>
+        </details>
+        <details>
+          <summary>为什么部分内容会上线后补充说明？</summary>
+          <p>事件可能持续发展，编辑部会在获得新信息后追加核查结论，并在显著位置标注更新时间，避免用户看到过时信息。</p>
+        </details>
+        <details>
+          <summary>创作者认证需要满足哪些条件？</summary>
+          <p>需至少 3 条通过完整核查的作品、无版权与隐私争议记录，并同意遵守平台发布规范。认证后可获得固定主页与投稿优先通道。</p>
+        </details>
+        <details>
+          <summary>是否可以申请删除已发布内容？</summary>
+          <p>当事人可提出删除申请，平台会评估公共利益与个人权益后作出处理，并在结果页说明依据。涉及未成年人的内容会优先保护。</p>
+        </details>
+        <details>
+          <summary>如何参加线下放映与工作坊？</summary>
+          <p>活动信息会在企业动态与官方发布栏目同步，报名通常提前两周开放。工作坊以实践为主，需自备可拍摄设备。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="b911-footer">
+  <div class="b911-wrap">
+    <div class="b911-footer-grid">
+      <div>
+        <div class="b911-brand-in-footer">
+          <span class="b911-brand-mark">911</span>
+          <span class="b911-brand-name" style="color:#fff">911在线爆料</span>
+        </div>
+        <p>911在线爆料官方网站 · 版权所有 · 持续运营中。我们是一个以真实记录为核心的视频品牌平台，致力于为创作者与企业搭建高品质内容生态，坚持原创、正版、高清的发布标准。</p>
+        <p style="margin-top:10px">合作与投稿：official@911baoliao.example<br>工作时间：周一至周五 10:00–19:00</p>
+      </div>
+      <div>
+        <h4>频道</h4>
+        <ul>
+          <li><a href="#b911-focus">今日焦点</a></li>
+          <li><a href="#b911-videos">影像编辑室</a></li>
+          <li><a href="#b911-topics">长期企划</a></li>
+          <li><a href="#b911-authors">创作者名录</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#b911-essay">品牌解析</a></li>
+          <li><a href="#b911-news">企业动态</a></li>
+          <li><a href="#b911-reviews">社区口碑</a></li>
+          <li><a href="#b911-faq">帮助中心</a></li>
+          <li><a href="#top">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="b911-footer-bottom">
+      <span>© 2026 911在线爆料 官方网站 · 保留所有权利</span>
+      <span>内容发布于境内 · 备案号：京ICP备 0000000 号</span>
+    </div>
+  </div>
+</footer>
+
+<button class="b911-top" id="b911Top" type="button" aria-label="回到顶部">↑</button>
+<div class="b911-toast" id="b911Toast" role="status" aria-live="polite"></div>
+
+<div class="b911-modal" id="b911Modal" role="dialog" aria-modal="true" aria-labelledby="b911ModalTitle">
+  <div class="b911-modal-card">
+    <button class="b911-close" type="button" id="b911ModalClose" aria-label="关闭">×</button>
+    <h3 id="b911ModalTitle">提示</h3>
+    <div id="b911ModalBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端导航 */
+  var navToggle = document.getElementById('b911NavToggle');
+  var nav = document.getElementById('b911Nav');
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A' && window.innerWidth <= 900) {
+        nav.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* Toast */
+  var toast = document.getElementById('b911Toast');
+  var toastTimer = null;
+  function showToast(msg){
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('is-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){
+      toast.classList.remove('is-show');
+    }, 2200);
+  }
+
+  /* 搜索反馈 */
+  var form = document.getElementById('b911SearchForm');
+  var input = document.getElementById('b911SearchInput');
+  var msg = document.getElementById('b911SearchMsg');
+  if (form && input && msg) {
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var q = input.value.trim();
+      if (!q) {
+        msg.textContent = '请输入关键词，例如：城市、核查、家庭、夜行。';
+        return;
+      }
+      var pool = ['城市夜行档案','搬迁公告之后','五步核查法','母亲的第一支手机','社区影像工作坊','老陈夜行','巷口档案'];
+      var hit = pool.filter(function(t){ return t.indexOf(q) > -1; });
+      msg.textContent = hit.length
+        ? '已找到 ' + hit.length + ' 条相关结果：' + hit.join('、') + '。'
+        : '暂未找到“' + q + '”的直接结果，已为你记录搜索需求，可在下方频道中浏览相关专题。';
+    });
+    input.addEventListener('input', function(){
+      if (!input.value.trim()) msg.textContent = '';
+    });
+  }
+
+  /* 点赞 / 收藏 */
+  document.addEventListener('click', function(e){
+    var like = e.target.closest('[data-b911-like]');
+    if (like) {
+      var on = like.classList.toggle('is-on');
+      like.textContent = on ? '♥ 已赞' : '♡ 点赞';
+      var meta = like.closest('.b911-focus-body, .b911-vrow, .b911-vitem');
+      var countEl = meta ? meta.querySelector('[data-b911-like-count]') : null;
+      if (countEl) {
+        var base = parseFloat(countEl.getAttribute('data-b911-base') || '0');
+        if (!base) {
+          var m = countEl.textContent.match(/([\d.]+)/);
+          base = m ? parseFloat(m[1]) : 0;
+          countEl.setAttribute('data-b911-base', String(base));
+          countEl.setAttribute('data-b911-unit', countEl.textContent.replace(/[\d.]+/, '').trim());
+        }
+        var unit = countEl.getAttribute('data-b911-unit') || '';
+        var val = on ? base + 0.1 : base;
+        countEl.textContent = val.toFixed(1) + ' ' + unit.replace(/点赞/g, '点赞');
+      }
+      showToast(on ? '已点赞，感谢你的支持' : '已取消点赞');
+      return;
+    }
+
+    var fav = e.target.closest('[data-b911-fav]');
+    if (fav) {
+      var fon = fav.classList.toggle('is-on');
+      fav.textContent = fon ? '★ 已收藏' : '☆ 收藏';
+      showToast(fon ? '已加入收藏夹' : '已取消收藏');
+      return;
+    }
+
+    var cmt = e.target.closest('[data-b911-comment]');
+    if (cmt) {
+      openModal('评论与反馈', '<p>评论区已开放。欢迎围绕事实、拍摄方法与后续进展进行讨论，请勿发布未经核实的个人信息。</p><label class="b911-field">你的评论<textarea rows="3" placeholder="写下你的看法"></textarea></label><div class="b911-actions"><button class="b911-btn b911-btn-primary" type="button" data-b911-demo-submit>提交评论</button></div>');
+      return;
+    }
+
+    var share = e.target.closest('[data-b911-share]');
+    if (share) {
+      openModal('分享这条内容', '<p>选择渠道复制或分享，内容链接与标题会自动带上核查说明。</p><div class="b911-share-row"><button type="button" data-b911-demo-submit>微信</button><button type="button" data-b911-demo-submit>微博</button><button type="button" data-b911-demo-submit>QQ</button><button type="button" id="b911Copy">复制链接</button></div>');
+      return;
+    }
+
+    var opener = e.target.closest('[data-b911-open]');
+    if (opener) {
+      var kind = opener.getAttribute('data-b911-open');
+      if (kind === 'submit') {
+        openModal('投稿爆料 / 报名', '<p>请填写基本信息，编辑会在 24 小时内回复。涉及他人隐私的素材请先说明授权情况。</p><label class="b911-field">称呼<input type="text" placeholder="如何称呼你"></label><label class="b911-field">联系方式<input type="text" placeholder="邮箱或常用社交账号"></label><label class="b911-field">素材或选题简介<textarea rows="3" placeholder="时间、地点、发生了什么"></textarea></label><div class="b911-actions"><button class="b911-btn b911-btn-primary" type="button" data-b911-demo-submit>提交</button></div>');
+      } else if (kind === 'report') {
+        openModal('反馈与举报', '<p>如发现事实错误、隐私问题或侵权内容，请告知具体条目与理由，核查小组会跟进处理。</p><label class="b911-field">问题类型<input type="text" placeholder="例如：时间地点有误 / 涉及隐私"></label><label class="b911-field">说明<textarea rows="3" placeholder="请描述具体情况"></textarea></label><div class="b911-actions"><button class="b911-btn b911-btn-primary" type="button" data-b911-demo-submit>提交反馈</button></div>');
+      } else if (kind === 'author') {
+        var name = opener.getAttribute('data-b911-name') || '创作者';
+        openModal(name + ' · 作者信息', '<p>' + name + ' 已通过平台身份与作品核验，长期在 911在线爆料发布原创内容。主页展示擅长领域、作品数量与粉丝数据，关注后可第一时间收到更新提醒。</p><div class="b911-actions"><button class="b911-btn b911-btn-primary" type="button" data-b911-demo-submit>关注作者</button><button class="b911-btn b911-btn-ghost" type="button" data-b911-demo-submit>查看作品</button></div>');
+      } else if (kind === 'contact') {
+        openModal('联系我们', '<p>合作、授权与媒体咨询请发送邮件至 official@911baoliao.example，或通过站内表单提交。工作时间为周一至周五 10:00–19:00。</p><div class="b911-actions"><button class="b911-btn b911-btn-primary" type="button" data-b911-demo-submit>我知道了</button></div>');
+      }
+      return;
+    }
+
+    if (e.target.closest('[data-b911-demo-submit]')) {
+      closeModal();
+      showToast('已提交，我们会尽快处理');
+      return;
+    }
+
+    if (e.target.id === 'b911Copy') {
+      var url = 'https://example.com/911-video';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function(){ showToast('链接已复制'); }, function(){ showToast('复制失败，请手动选择链接'); });
+      } else {
+        showToast('链接已准备好，请手动复制');
+      }
+      return;
+    }
+  });
+
+  /* 弹窗 */
+  var modal = document.getElementById('b911Modal');
+  var modalTitle = document.getElementById('b911ModalTitle');
+  var modalBody = document.getElementById('b911ModalBody');
+  var modalClose = document.getElementById('b911ModalClose');
+
+  function openModal(title, html){
+    if (!modal) return;
+    modalTitle.textContent = title;
+    modalBody.innerHTML = html;
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modal) {
+    modal.addEventListener('click', function(e){
+      if (e.target === modal) closeModal();
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeModal();
+  });
+
+  /* 回到顶部 */
+  var topBtn = document.getElementById('b911Top');
+  window.addEventListener('scroll', function(){
+    if (!topBtn) return;
+    topBtn.classList.toggle('is-show', window.scrollY > 600);
+  }, {passive:true});
+  if (topBtn) topBtn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 数据数字滚动 */
+  var counters = document.querySelectorAll('[data-b911-count]');
+  if ('IntersectionObserver' in window && counters.length) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        if (el.dataset.b911Done) return;
+        el.dataset.b911Done = '1';
+        var target = parseInt(el.getAttribute('data-b911-count'), 10);
+        if (!isFinite(target)) return;
+        var start = performance.now();
+        var dur = 900;
+        function step(now){
+          var p = Math.min(1, (now - start) / dur);
+          var eased = 1 - Math.pow(1 - p, 3);
+          var val = Math.round(target * eased);
+          el.textContent = val.toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        io.unobserve(el);
+      });
+    }, {threshold:.4});
+    counters.forEach(function(c){ io.observe(c); });
+  }
+})();
+</script>
+</body>
+  </html>
